@@ -22,26 +22,14 @@ abstract class BaseState<T extends BaseStatefulWidget> extends State<T>
     super.initState();
   }
 
-  Future<bool> willPopBack();
-
-  bool isSafeArea();
-
-  PreferredSizeWidget? appBar();
-
   @override
   Widget build(BuildContext context) {
     // _initProgressDialog();
-    return WillPopScope(
-      onWillPop: willPopBack,
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Colors.white,
-        appBar: appBar(),
-        body: isSafeArea()
-            ? SafeArea(child: _defaultBody)
-            : _defaultBody,
-        // )
-      ),
+    return Scaffold(
+      key: scaffoldKey,
+      backgroundColor: Colors.white,
+      body:_defaultBody,
+      // )
     );
   }
 

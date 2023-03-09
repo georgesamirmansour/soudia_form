@@ -2,7 +2,9 @@ import 'package:first_form/utilities/CustomText.dart';
 import 'package:first_form/utilities/CustomTextStyle.dart';
 import 'package:first_form/utilities/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
+import '../generated/l10n.dart';
 import '../utilities/image_paths.dart';
 
 
@@ -13,16 +15,17 @@ class LogoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.1),
+          horizontal: 15.w, vertical: 3.h),
       child: _logoRow(),
     );
   }
 
   Widget _logoRow() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        _getWhatsAppImage(),
+        // _getWhatsAppImage(),
         _getLogo()
       ],
     );
@@ -33,11 +36,11 @@ class LogoWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ImageHelper(image: whatsApp, imageType: ImageType.asset,
-        width: 15,height: 15, boxFit: BoxFit.fill,),
-        const SizedBox(width: 17.0,),
-        CustomText(text: 'اتصل بنا', customTextStyle: MediumStyle(
+        width: 20.w,height: 20.h, boxFit: BoxFit.contain,),
+        SizedBox(width: 10.w,),
+        CustomText(text: S.current.callUs, customTextStyle: MediumStyle(
           color: blackColor,
-          fontSize: 16,
+          fontSize: 16.sp,
         ))
       ],
     );
@@ -45,8 +48,8 @@ class LogoWidget extends StatelessWidget {
   
   Widget _getLogo(){
     return ImageHelper(image: logoImage, imageType: ImageType.asset,
-    height: 90,
-    width: 110,
-    boxFit: BoxFit.fill,);
+    height: 90.h,
+    width: 110.w,
+    boxFit: BoxFit.contain,);
   }
 }

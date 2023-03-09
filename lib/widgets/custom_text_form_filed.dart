@@ -3,6 +3,7 @@ import 'package:first_form/utilities/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
 
 class CustomTextFormFiled extends StatelessWidget {
@@ -130,8 +131,8 @@ class CustomTextFormFiled extends StatelessWidget {
         errorMaxLines: 4,
         contentPadding: hasContentPadding
             ? customContentPadding ??
-                const EdgeInsets.only(
-                    left: 14.0, right: 14.0, top: 14.0, bottom: 14.0)
+                EdgeInsets.only(
+                    left: 14.w, right: 14.w, top: 14.h, bottom: 14.h)
             : null,
         errorText: errorText,
         enabled: enable,
@@ -170,21 +171,21 @@ class CustomTextFormFiled extends StatelessWidget {
       );
 
   TextStyle get _counterTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 18)
+      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 18.sp)
           .getStyle();
 
   TextStyle get _errorTextStyle =>
       MediumStyle(color: Colors.red, fontSize: 16).getStyle();
 
   TextStyle get _hintTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 18)
+      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 18.sp)
           .getStyle();
 
   TextStyle get _defaultTextStyle =>
-      MediumStyle(color: blackColor, fontSize: 14).getStyle();
+      MediumStyle(color: blackColor, fontSize: 14.sp).getStyle();
 
   InputBorder? _getBorder(Color color) => usedInAppBar
-      ? UnderlineInputBorder(borderSide: BorderSide(color: color, width: 1.0))
+      ? UnderlineInputBorder(borderSide: BorderSide(color: color, width: 1.0.w))
       : getOutLineBorder(color);
 
   InputBorder getOutLineBorder(Color color) => OutlineInputBorder(

@@ -1,8 +1,8 @@
-const String _svgPath = 'assets/svg/';
-const String _imagePath = 'assets/images/';
+const String _svgPath = 'lib/assets/svg/';
+const String _imagePath = 'lib/assets/images/';
 
 const String logoImage = "${_imagePath}logo.png";
-const String whatsApp = "${_imagePath}whats_app.png";
+const String whatsApp = "${_imagePath}whatsApp.png";
 const String fromBackIcon = "${_imagePath}formBackIcon.png";
 
 /// svg images

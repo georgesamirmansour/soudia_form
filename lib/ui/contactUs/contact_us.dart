@@ -3,11 +3,19 @@ import 'package:first_form/utilities/CustomTextStyle.dart';
 import 'package:first_form/utilities/app_colors.dart';
 import 'package:first_form/utilities/image_paths.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
 
-class ContactUsWidget extends StatelessWidget {
-  ContactUsWidget({Key? key}) : super(key: key);
+import '../../generated/l10n.dart';
 
+class ContactUsWidget extends StatefulWidget {
+  const ContactUsWidget({Key? key}) : super(key: key);
+
+  @override
+  State<ContactUsWidget> createState() => _ContactUsWidgetState();
+}
+
+class _ContactUsWidgetState extends State<ContactUsWidget> {
   @override
   Widget build(BuildContext context) {
     return _getUiColumn();
@@ -15,95 +23,169 @@ class ContactUsWidget extends StatelessWidget {
 
   Widget _getUiColumn() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _getContactUsText(),
-        const SizedBox(height: 20,),
+        SizedBox(
+          height: 15.h,
+        ),
         _getDescText(),
-        const SizedBox(height: 25,),
+        SizedBox(
+          height: 20.h,
+        ),
         _getCard(_getAddressColumn()),
-        const SizedBox(height: 30,),
+        SizedBox(
+          height: 20.h,
+        ),
         _getCard(_getEmailColumn()),
-        const SizedBox(height: 30,),
+        SizedBox(
+          height: 20.h,
+        ),
         _getCard(_getCallUsColumn()),
-        const SizedBox(height: 30,),
+        SizedBox(
+          height: 20.h,
+        ),
       ],
     );
   }
 
-  Widget _getContactUsText(){
-    return CustomText(text: "التواصل", customTextStyle: MediumStyle(fontSize: 34, color: blackColor));
-}
+  Widget _getContactUsText() {
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30.w),
+        child: CustomText(
+            text: S.of(context).contactUs,
+            customTextStyle: MediumStyle(fontSize: 34.sp, color: blackColor)));
+  }
 
   Widget _getDescText() {
-    return CustomText(text: "نحن معاً نستحق.. فـــلنتشارك", customTextStyle: MediumStyle(fontSize: 20, color: blackColor));
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 30.w),
+      child: CustomText(
+          text: S.of(context).addressHeaderText,
+          customTextStyle: MediumStyle(fontSize: 20.sp, color: blackColor)),
+    );
   }
 
   Widget _getCard(Widget child) {
     return Container(
-      margin: const EdgeInsets.only(top: 24, bottom: 24, left: 33, right: 43),
+      margin: EdgeInsets.symmetric(horizontal: 30.w),
+      width: MediaQuery.of(context).size.width *0.32,
       decoration: BoxDecoration(
-        color: whiteColor,
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.25),
-            offset: const Offset(2.0,2.0),
-            blurRadius: 4.0
-          )
-        ]
-      ),
+          color: whiteColor,
+          borderRadius: BorderRadius.all(Radius.circular(5.r)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.25),
+                offset: const Offset(2.0, 2.0),
+                blurRadius: 4.0)
+          ]),
       child: child,
     );
   }
 
-  Widget _getAddressColumn(){
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomText(text: "العنوان", customTextStyle: MediumStyle(fontSize: 20, color: descColor)),
-            ImageHelper(image: addressIcon, imageType: ImageType.svg, height: 50, width: 50, boxFit: BoxFit.fill,)
-          ],
-        ),
-        const SizedBox(height: 26,),
-        CustomText(text: "شارع اسحق التقادي - الشاطئ ، جدة 23613 المملكة العربية السعودية..........", customTextStyle: MediumStyle(fontSize: 14, color: blackColor))
-      ],
+  Widget _getAddressColumn() {
+    return Container(
+      margin: EdgeInsets.only(top: 30.h, bottom: 20.h, left: 30.w, right: 30.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomText(
+                  text: S.of(context).address,
+                  customTextStyle:
+                      MediumStyle(fontSize: 20.sp, color: descColor)),
+              ImageHelper(
+                image: addressIcon,
+                imageType: ImageType.svg,
+                height: 50.h,
+                width: 50.w,
+                boxFit: BoxFit.fill,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 26.h,
+          ),
+          CustomText(
+              text: S.of(context).addressInfo,
+              customTextStyle: MediumStyle(fontSize: 14.sp, color: blackColor))
+        ],
+      ),
     );
   }
 
-  Widget _getEmailColumn(){
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomText(text: "البريد الإلكتروني", customTextStyle: MediumStyle(fontSize: 20, color: descColor)),
-            ImageHelper(image: emailIcon, imageType: ImageType.svg, height: 50, width: 50, boxFit: BoxFit.fill,)
-          ],
-        ),
-        const SizedBox(height: 26,),
-        CustomText(text: "info@broadcastmp.com", customTextStyle: MediumStyle(fontSize: 14, color: blackColor))
-      ],
+  Widget _getEmailColumn() {
+    return Container(
+      margin: EdgeInsets.only(top: 30.h, bottom: 20.h, left: 30.w, right: 30.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomText(
+                  text: S.of(context).email,
+                  customTextStyle:
+                      MediumStyle(fontSize: 20.sp, color: descColor)),
+              ImageHelper(
+                image: emailIcon,
+                imageType: ImageType.svg,
+                height: 50.h,
+                width: 50.w,
+                boxFit: BoxFit.fill,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 26.h,
+          ),
+          CustomText(
+              text: "info@broadcastmp.com",
+              customTextStyle: MediumStyle(fontSize: 14.sp, color: blackColor))
+        ],
+      ),
     );
   }
 
-  Widget _getCallUsColumn(){
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CustomText(text: "إتصل بنا", customTextStyle: MediumStyle(fontSize: 20, color: descColor)),
-            ImageHelper(image: callUsIcon, imageType: ImageType.svg, height: 50, width: 50, boxFit: BoxFit.fill,)
-          ],
-        ),
-        const SizedBox(height: 26,),
-        CustomText(text: "+966531556519", customTextStyle: MediumStyle(fontSize: 14, color: blackColor))
-      ],
+  Widget _getCallUsColumn() {
+    return Container(
+      margin: EdgeInsets.only(top: 30.h, bottom: 20.h, left: 30.w, right: 30.w),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              CustomText(
+                  text: S.of(context).callUs,
+                  customTextStyle:
+                      MediumStyle(fontSize: 20.sp, color: descColor)),
+              ImageHelper(
+                image: callUsIcon,
+                imageType: ImageType.svg,
+                height: 50.h,
+                width: 50.w,
+                boxFit: BoxFit.fill,
+              )
+            ],
+          ),
+          SizedBox(
+            height: 26.h,
+          ),
+          CustomText(
+              text: "966531556519+",
+              customTextStyle: MediumStyle(fontSize: 14.sp, color: blackColor))
+        ],
+      ),
     );
   }
 }
