@@ -21,6 +21,8 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
     return _getUiColumn();
   }
 
+  bool _isMobile() => MediaQuery.of(context).size.width < 1200;
+
   Widget _getUiColumn() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -70,7 +72,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
   Widget _getCard(Widget child) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30.w),
-      width: MediaQuery.of(context).size.width *0.32,
+      width: _isMobile() ? MediaQuery.of(context).size.width *0.75 : MediaQuery.of(context).size.width *0.35,
       decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: BorderRadius.all(Radius.circular(5.r)),
