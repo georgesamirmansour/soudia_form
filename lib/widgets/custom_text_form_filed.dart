@@ -171,18 +171,18 @@ class CustomTextFormFiled extends StatelessWidget {
       );
 
   TextStyle get _counterTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 18.sp)
+      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 14.sp)
           .getStyle();
 
   TextStyle get _errorTextStyle =>
       MediumStyle(color: Colors.red, fontSize: 16).getStyle();
 
   TextStyle get _hintTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 18.sp)
+      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 14.sp)
           .getStyle();
 
   TextStyle get _defaultTextStyle =>
-      MediumStyle(color: blackColor, fontSize: 14.sp).getStyle();
+      BoldStyle(color: blackColor, fontSize: 14.sp).getStyle();
 
   InputBorder? _getBorder(Color color) => usedInAppBar
       ? UnderlineInputBorder(borderSide: BorderSide(color: color, width: 1.0.w))

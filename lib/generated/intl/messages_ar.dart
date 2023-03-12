@@ -28,21 +28,74 @@ class MessageLookup extends MessageLookupByLibrary {
         "addressInfo": MessageLookupByLibrary.simpleMessage(
             "شارع اسحق التقادي - الشاطئ ، جدة 23613 المملكة العربية السعودية.........."),
         "arabicLanguage": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
+        "businessIdentityHandBook":
+            MessageLookupByLibrary.simpleMessage("كتيب دليل\nالهوي التجارية"),
         "callUs": MessageLookupByLibrary.simpleMessage("إتصل بنا"),
+        "cars": MessageLookupByLibrary.simpleMessage("السيارات"),
+        "character": MessageLookupByLibrary.simpleMessage("رمزي – كاركتر"),
+        "clothes": MessageLookupByLibrary.simpleMessage("الملابس"),
+        "commercial": MessageLookupByLibrary.simpleMessage("تجاري"),
         "contactUs": MessageLookupByLibrary.simpleMessage("التواصل"),
+        "designOfCommunicationSitesSocial":
+            MessageLookupByLibrary.simpleMessage(
+                "تصميم مواقع\nالتواصل الاجتماعي"),
+        "dynamic": MessageLookupByLibrary.simpleMessage("ديناميكي"),
+        "educational": MessageLookupByLibrary.simpleMessage("تعليمي"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "englishLanguage":
             MessageLookupByLibrary.simpleMessage("اللغة الانجليزية"),
+        "envelopesOfDifferentSize":
+            MessageLookupByLibrary.simpleMessage("أظرف مختلفة\nالحجم"),
+        "industrial": MessageLookupByLibrary.simpleMessage("صناعي"),
+        "informative": MessageLookupByLibrary.simpleMessage("إعلامي"),
+        "linear": MessageLookupByLibrary.simpleMessage("خطي"),
+        "loading": MessageLookupByLibrary.simpleMessage("جاري الارسال"),
+        "marketing": MessageLookupByLibrary.simpleMessage("تسويقي"),
+        "mixed": MessageLookupByLibrary.simpleMessage("مزيج – مختلط"),
         "mobile": MessageLookupByLibrary.simpleMessage("رقم الجوال"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+        "noDataFound": MessageLookupByLibrary.simpleMessage("لا توجد بيانات"),
+        "noteBooksAndPens":
+            MessageLookupByLibrary.simpleMessage("دفتر الملاحظات\nوأقلام"),
         "otherLanguage": MessageLookupByLibrary.simpleMessage("لغة أخرى"),
+        "paperFile": MessageLookupByLibrary.simpleMessage("ملف الأوراق"),
+        "paperPages": MessageLookupByLibrary.simpleMessage("أكياس ورقية"),
+        "personalCard": MessageLookupByLibrary.simpleMessage("الكروت الشخصية"),
+        "powerPointPresentationTemplates":
+            MessageLookupByLibrary.simpleMessage("قوالب عروض\nالبوربوينت"),
+        "profile": MessageLookupByLibrary.simpleMessage("الملف التعريفي"),
+        "projectIdea": MessageLookupByLibrary.simpleMessage(
+            "هل لديك فكرة محددة تريد تطبيقها في علامتك التجارية؟"),
+        "projectIdentity": MessageLookupByLibrary.simpleMessage(
+            "ما هي تطبيقات الهوية التي تحتاجها؟"),
+        "projectImpression": MessageLookupByLibrary.simpleMessage(
+            "ما هو الانطباع الذي تريد أن توصله علامتك التجارية؟"),
         "projectLanguageType": MessageLookupByLibrary.simpleMessage(
             "ما هي اللغة التي ترغب في استخدامها؟"),
+        "projectLogo": MessageLookupByLibrary.simpleMessage(
+            "ما هو نمط الشعار الذي تفضله؟"),
+        "projectNotes": MessageLookupByLibrary.simpleMessage(
+            "في حالة وجود معلومات أخرى عن مشروعك، يرجى ذكرها هنا."),
+        "projectPrice": MessageLookupByLibrary.simpleMessage(
+            "ما هي الميزانية المخصصة لصناعة هوية مشروعك؟"),
         "projectSubject": MessageLookupByLibrary.simpleMessage(
             "ما هو مجال المشروع الخاص بك؟"),
+        "projectTarget": MessageLookupByLibrary.simpleMessage(
+            "ما هي الفئات المستهدفة بالنسبة للمشروع الخاص بك؟"),
         "projectType":
             MessageLookupByLibrary.simpleMessage("ما هو اسم المشروع الخاص بك؟"),
+        "projectValuable": MessageLookupByLibrary.simpleMessage(
+            "ما هي القيم التي يرتكز عليها المشروع الخاص بك؟"),
+        "required": MessageLookupByLibrary.simpleMessage("يجب ملئ هذه الخانه"),
+        "rollUp": MessageLookupByLibrary.simpleMessage("رول آب"),
+        "send": MessageLookupByLibrary.simpleMessage("تسجيل"),
+        "servicing": MessageLookupByLibrary.simpleMessage("خدمي"),
+        "signageDesign": MessageLookupByLibrary.simpleMessage("تصميم اللافتات"),
+        "success": MessageLookupByLibrary.simpleMessage("تم"),
+        "textual": MessageLookupByLibrary.simpleMessage("نصي"),
         "thanksForTrustInUs": MessageLookupByLibrary.simpleMessage(
-            "نشكركم على ثقتكم العالية\nونتشرف بتقديم كل ما هو\nمناسب ومميز وعبقري في\nصناعة الهوية المرئية.")
+            "نشكركم على ثقتكم العالية\nونتشرف بتقديم كل ما هو\nمناسب ومميز وعبقري في\nصناعة الهوية المرئية."),
+        "webSiteDesign":
+            MessageLookupByLibrary.simpleMessage("تصميم الموقع\nالإلكتروني")
       };
 }

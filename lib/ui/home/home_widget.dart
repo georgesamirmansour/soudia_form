@@ -10,23 +10,30 @@ class HomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-    body: SafeArea(
-      child: SingleChildScrollView(
-        clipBehavior: Clip.none,
-        child: Column(
-            children: [
-              _getLogoWidget(),
-              SizedBox(height: 30.h,),
-              _getTopWidget()
-
-            ],
+        body: SafeArea(
+          child: LayoutBuilder(
+            builder: (context, boxConstraints) => ConstrainedBox(
+                constraints: BoxConstraints(
+                    maxHeight: boxConstraints.maxHeight,
+                    minHeight: boxConstraints.minHeight,
+                    maxWidth: boxConstraints.maxWidth,
+                    minWidth: boxConstraints.minWidth),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      _getLogoWidget(),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      _getTopWidget()
+                    ],
+                  ),
+                )),
           ),
-      ),
-    ),
-  );
+        ),
+      );
 
+  Widget _getLogoWidget() => const LogoWidget();
 
-  Widget _getLogoWidget()=> const LogoWidget();
-
-  Widget _getTopWidget()=> const TopWidget(FirstFormWidget());
+  Widget _getTopWidget() => const TopWidget(FirstFormWidget());
 }

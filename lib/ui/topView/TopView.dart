@@ -25,7 +25,7 @@ class _TopWidgetState extends State<TopWidget> {
         : _getDefaultWebWidget();
   }
 
-  bool _isMobile() => MediaQuery.of(context).size.width < 950;
+  bool _isMobile() => MediaQuery.of(context).size.width < 1200;
 
   Widget _getLinearContainer(Widget? child) => Container(
         width: MediaQuery.of(context).size.width,
@@ -64,7 +64,7 @@ class _TopWidgetState extends State<TopWidget> {
       );
 
   Widget _getDefaultWebWidget() => SizedBox(
-    height: 1300.h,
+    height: 2000.h,
     child: Stack(
       children: [
         Positioned(top: 0, right: 0, left: 0,child: _getLinearContainer(null),),

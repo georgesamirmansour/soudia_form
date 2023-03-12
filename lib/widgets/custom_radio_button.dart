@@ -9,13 +9,15 @@ import '../utilities/CustomTextStyle.dart';
 class CustomRadioButtonWidget extends StatefulWidget {
   final String labelText;
   final RadioMapper mapper;
-  final ValueChanged<RadioMapper?>? onChanged;
+  final RadioMapper selectedItem;
+  final Function(RadioMapper selectedItem) onChanged;
 
   const CustomRadioButtonWidget(
       {Key? key,
       required this.labelText,
       required this.onChanged,
-      required this.mapper})
+      required this.mapper,
+      required this.selectedItem})
       : super(key: key);
 
   @override
@@ -25,23 +27,27 @@ class CustomRadioButtonWidget extends StatefulWidget {
 
 class _CustomRadioButtonWidgetState extends State<CustomRadioButtonWidget> {
   @override
-  Widget build(BuildContext context) {
-    // return Row(
-    //   children: [
-    //     Radio<RadioMapper>(
-    //       value: widget.mapper,
-    //       groupValue: widget.mapper,
-    //       onChanged: widget.onChanged,
-    //       activeColor: accentColor,
-    //     ),
-    //     SizedBox(
-    //       width: 5.0.w,
-    //     ),
-    //     CustomText(
-    //         text: widget.labelText,
-    //         customTextStyle: MediumStyle(fontSize: 12.sp, color: answerColor)),
-    //   ],
-    // );
-    return Container(color: Colors.black,);
-  }
+  Widget build(BuildContext context) => InkWell(
+    onTap: () {
+      widget.mapper.checked = !widget.mapper.checked;
+      widget.onChanged(widget.mapper);
+    },
+    child: Row(
+        children: [
+          Radio<RadioMapper>(
+            value: widget.selectedItem,
+            groupValue: widget.mapper,
+            onChanged: (value) {
+              widget.mapper.checked = !widget.mapper.checked;
+              widget.onChanged(widget.mapper);
+            },
+            activeColor: accentColor,
+          ),
+          CustomText(
+              text: widget.labelText,
+              softWrap: true,
+              customTextStyle: MediumStyle(fontSize: 12.sp, color: answerColor)),
+        ],
+      ),
+  );
 }
