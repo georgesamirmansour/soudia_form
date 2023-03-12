@@ -5,6 +5,8 @@ import 'package:first_form/bases/bloc_base.dart';
 import 'package:flutter_mail_server/flutter_mail_server.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../../bases/Validator.dart';
+
 class FirstFormBloc extends BlocBase {
   final _nameBehaviour = BehaviorSubject<String>();
   final _mobileBehaviour = BehaviorSubject<String>();
@@ -20,19 +22,20 @@ class FirstFormBloc extends BlocBase {
   final _projectPriceBehaviour = BehaviorSubject<String>();
   final _projectNotesBehaviour = BehaviorSubject<String>();
   final buttonBehaviour = BehaviorSubject<ButtonState>();
+  final Validator _validator = Validator();
+  final failedBehaviour = BehaviorSubject<String>();
 
-
-  FirstFormBloc(){
-    _nameBehaviour.sink.add("");
-    _mobileBehaviour.sink.add("");
-    _projectTypeBehaviour.sink.add("");
-    _projectValuableBehaviour.sink.add('');
-    _projectIdeaBehaviour.sink.add('');
-    _projectImpressionBehaviour.sink.add('');
-    _projectTargetBehaviour.sink.add('');
+  FirstFormBloc() {
+    // _nameBehaviour.sink.add("");
+    // _mobileBehaviour.sink.add("");
+    // _projectTypeBehaviour.sink.add("");
+    // _projectValuableBehaviour.sink.add('');
+    // _projectIdeaBehaviour.sink.add('');
+    // _projectImpressionBehaviour.sink.add('');
+    // _projectTargetBehaviour.sink.add('');
     _projectIdentityBehaviour.sink.add([]);
-    _projectPriceBehaviour.sink.add('');
-    _projectNotesBehaviour.sink.add('');
+    // _projectPriceBehaviour.sink.add('');
+    // _projectNotesBehaviour.sink.add('');
   }
 
   Stream<String> get nameStream => _nameBehaviour.stream;
@@ -87,26 +90,30 @@ class FirstFormBloc extends BlocBase {
       _projectIdentityBehaviour.sink.add(list);
 
   Stream<bool> get validate => Rx.combineLatest9(
-      nameStream,
-      mobileStream,
-      projectTypeStream,
-      projectValuableStream,
-      projectIdeaStream,
-      projectImpressionStream,
-      projectTargetStream,
-      projectPriceStream,
-      _projectIdentityBehaviour.stream,
-      (name, mobile, type, valuable, idea, impression, target, price,
-              identities) =>
-          name.isNotEmpty &&
-          mobile.isNotEmpty &&
-          type.isNotEmpty &&
-          valuable.isNotEmpty &&
-          idea.isNotEmpty &&
-          impression.isNotEmpty &&
-          target.isNotEmpty &&
-          price.isNotEmpty &&
-          identities.isNotEmpty);
+          nameStream,
+          mobileStream,
+          projectTypeStream,
+          projectValuableStream,
+          projectIdeaStream,
+          projectImpressionStream,
+          projectTargetStream,
+          projectPriceStream,
+          _projectIdentityBehaviour.stream, (name, mobile, type, valuable, idea,
+              impression, target, price, identities) {
+        return _validateForm ? true : false;
+      });
+
+  bool get _validateForm =>
+      _validator.notEmptyValid(_nameBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_mobileBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectTypeBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectValuableBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectIdeaBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectImpressionBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectTargetBehaviour.valueOrNull) &&
+      _validator.notEmptyValid(_projectPriceBehaviour.valueOrNull) &&
+      _projectIdentityBehaviour.valueOrNull != null &&
+      _projectIdentityBehaviour.valueOrNull!.isNotEmpty;
 
   @override
   void dispose() {
@@ -126,19 +133,24 @@ class FirstFormBloc extends BlocBase {
     buttonBehaviour.close();
   }
 
-   void sendSMTP() async{
-    try{
-      buttonBehaviour.sink.add(ButtonState.loading);
-      await Mailer().sendEmail(_emailUserName, _emailUserName, _getMailMessage(), _emailUserName, '', 'errorMsg', 'successMsg');
-      buttonBehaviour.sink.add(ButtonState.success);
-    }catch(e){
+  void sendSMTP() async {
+    try {
+      if(_validateForm){
+        buttonBehaviour.sink.add(ButtonState.loading);
+        // await Mailer().sendEmail(_emailUserName, _emailUserName,
+        //     _getMailMessage(), _emailUserName, '', 'errorMsg', 'successMsg');
+        await mailExample();
+        buttonBehaviour.sink.add(ButtonState.success);
+      }
+    } catch (e) {
       print(e);
-      buttonBehaviour.sink.add(ButtonState.fail);
     }
   }
+
   Future<void> mailExample() async {
     print('discovering settings for  $_emailUserName...');
-    final config = await Discover.discover(_emailUserName, forceSslConnection: false, isLogEnabled: false);
+    final config = await Discover.discover(_emailUserName,
+        forceSslConnection: false, isLogEnabled: false);
     if (config == null) {
       // note that you can also directly create an account when
       // you cannot auto-discover the settings:
@@ -149,8 +161,8 @@ class FirstFormBloc extends BlocBase {
       return;
     }
     print('connecting to ${config.displayName}.');
-    final account =
-    MailAccount.fromDiscoveredSettings('my account', _emailUserName, "@#Apocalypse99", config);
+    final account = MailAccount.fromDiscoveredSettings(
+        'my account', _emailUserName, "@#Apocalypse99", config);
     final mailClient = MailClient(account, isLogEnabled: true);
     try {
       await mailClient.connect();
@@ -163,15 +175,14 @@ class FirstFormBloc extends BlocBase {
     }
   }
 
-
   final String _emailUserName = "george.samir.mansour@gmail.com";
 
-  String _getProjectIdentities(){
+  String _getProjectIdentities() {
     String identities = "";
     for (var element in _projectIdentityBehaviour.value) {
-      if(identities.isNotEmpty) {
+      if (identities.isNotEmpty) {
         identities = "${element.label}\n";
-      }else {
+      } else {
         identities = element.label;
       }
     }
@@ -180,25 +191,23 @@ class FirstFormBloc extends BlocBase {
 
   MimeMessage buildMessage() {
     final builder = MessageBuilder.prepareMultipartAlternativeMessage(
-        plainText: _getMailMessage()
-    );
+        plainText: _getMailMessage());
     return builder.buildMimeMessage();
-
   }
 
   String _getMailMessage() {
     return '${_nameBehaviour.value}الاسم: '
-          '${_mobileBehaviour.value}رقم الجوال: '
-          '${_projectTypeBehaviour.value}المشروع الخاص بي: '
-          '${_selectedPreferredLanguageBehaviour.value}اللغة التي ارغب في استخدامها: '
-          '${_selectedProjectFiledBehaviour.value.label}مجال المشروع: '
-          '${_projectValuableBehaviour.value}القيم التي يتركز عليها المشروع الخاص بي: '
-          '${_projectIdeaBehaviour.value}فكره محدده اريد تطبيقها في علامتي التجارية: '
-          '${_projectImpressionBehaviour.value}الانطباع الذي اريد ان توصلة العلامة التجارية: '
-          '${_projectValuableBehaviour.value}الفئات المستهدفة بالنسبة للمشروع الخاص بي: '
-          '${_projectPatterBehaviour.value.label}نمط الشعار الذي افضلة: '
-          '${_getProjectIdentities()}تطبيقات الهوية التي احتاجها: '
-          '${_projectPriceBehaviour.value}الميزانية المخصصة لصناعة هوية مشروعي: '
-          '${_projectNotesBehaviour.value}معلومات أخرى عن مشروعك: ';
+        '${_mobileBehaviour.value}رقم الجوال: '
+        '${_projectTypeBehaviour.value}المشروع الخاص بي: '
+        '${_selectedPreferredLanguageBehaviour.value}اللغة التي ارغب في استخدامها: '
+        '${_selectedProjectFiledBehaviour.value.label}مجال المشروع: '
+        '${_projectValuableBehaviour.value}القيم التي يتركز عليها المشروع الخاص بي: '
+        '${_projectIdeaBehaviour.value}فكره محدده اريد تطبيقها في علامتي التجارية: '
+        '${_projectImpressionBehaviour.value}الانطباع الذي اريد ان توصلة العلامة التجارية: '
+        '${_projectValuableBehaviour.value}الفئات المستهدفة بالنسبة للمشروع الخاص بي: '
+        '${_projectPatterBehaviour.value.label}نمط الشعار الذي افضلة: '
+        '${_getProjectIdentities()}تطبيقات الهوية التي احتاجها: '
+        '${_projectPriceBehaviour.value}الميزانية المخصصة لصناعة هوية مشروعي: '
+        '${_projectNotesBehaviour.value}معلومات أخرى عن مشروعك: ';
   }
 }

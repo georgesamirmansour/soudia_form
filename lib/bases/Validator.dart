@@ -11,4 +11,6 @@ class Validator{
   MultiValidator emptyValidator(BuildContext context) => MultiValidator([
     RequiredValidator(errorText: S.of(context).required),
   ]);
+
+  bool notEmptyValid(String? value) => emptyValid.isValid(value);
 }

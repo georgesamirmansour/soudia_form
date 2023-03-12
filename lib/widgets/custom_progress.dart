@@ -8,7 +8,7 @@ class CustomProgress extends StatefulWidget {
   final double size;
   final Color color;
 
-  CustomProgress({this.size = 30, this.color = accentColor});
+  const CustomProgress({super.key, this.size = 30, this.color = accentColor});
 
   @override
   _CustomProgressState createState() => _CustomProgressState();
