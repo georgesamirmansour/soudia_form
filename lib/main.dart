@@ -3,6 +3,7 @@ import 'package:first_form/ui/topView/TopView.dart';
 import 'package:flutter/material.dart';
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
 
   runApp(const MyAppWidget());
 }

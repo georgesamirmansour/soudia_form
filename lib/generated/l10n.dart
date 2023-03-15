@@ -199,6 +199,336 @@ class S {
       args: [],
     );
   }
+
+  /// `يرجى إرسال كافة البيانات والمعلومات الخاصة بالمصنع من`
+  String get allDataAndInfo {
+    return Intl.message(
+      'يرجى إرسال كافة البيانات والمعلومات الخاصة بالمصنع من',
+      name: 'allDataAndInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `اللوجو والشعار اللفظي`
+  String get logo {
+    return Intl.message(
+      'اللوجو والشعار اللفظي',
+      name: 'logo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المواقع الالكترونيه الخاصه بالموقع`
+  String get websiteSite {
+    return Intl.message(
+      'المواقع الالكترونيه الخاصه بالموقع',
+      name: 'websiteSite',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `بيانات التواصل`
+  String get contactInformation {
+    return Intl.message(
+      'بيانات التواصل',
+      name: 'contactInformation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الرؤيه المستقبليه`
+  String get futureVision {
+    return Intl.message(
+      'الرؤيه المستقبليه',
+      name: 'futureVision',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ما السبب فى تسمية هذا البراند(ان وجد)؟`
+  String get namingBrand {
+    return Intl.message(
+      'ما السبب فى تسمية هذا البراند(ان وجد)؟',
+      name: 'namingBrand',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى المشكلات التى تعتبر الخدمه/المنتج وسيله لحلها ؟`
+  String get problemsSolve {
+    return Intl.message(
+      'ماهى المشكلات التى تعتبر الخدمه/المنتج وسيله لحلها ؟',
+      name: 'problemsSolve',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى الميزه التنافسيه للمصنع؟`
+  String get advantageFactory {
+    return Intl.message(
+      'ماهى الميزه التنافسيه للمصنع؟',
+      name: 'advantageFactory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `اسماء خمسة منافسين؟`
+  String get fiveCompetitors {
+    return Intl.message(
+      'اسماء خمسة منافسين؟',
+      name: 'fiveCompetitors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى الاهداف الرئيسيه المراد تحقيقها من الحملات التسويقيه؟`
+  String get mainGoals {
+    return Intl.message(
+      'ماهى الاهداف الرئيسيه المراد تحقيقها من الحملات التسويقيه؟',
+      name: 'mainGoals',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كيف كانت تجربة التعامل مع المؤسسات من حيث (نقاط القوه والضعف والتاثير على العلامه التجاريه بالايجاب او السلب)؟`
+  String get brandPositivelyNegatively {
+    return Intl.message(
+      'كيف كانت تجربة التعامل مع المؤسسات من حيث (نقاط القوه والضعف والتاثير على العلامه التجاريه بالايجاب او السلب)؟',
+      name: 'brandPositivelyNegatively',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى مخاوف العميل عند شراء هذا النوع من الخدمات/المنتجات؟`
+  String get customerConcerns {
+    return Intl.message(
+      'ماهى مخاوف العميل عند شراء هذا النوع من الخدمات/المنتجات؟',
+      name: 'customerConcerns',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى احتياجات العميل عند شراء هذا النوع من الخدمات/المنتجات؟`
+  String get customerNeeds {
+    return Intl.message(
+      'ماهى احتياجات العميل عند شراء هذا النوع من الخدمات/المنتجات؟',
+      name: 'customerNeeds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `وصف مختصر للشريحه العملاء الرئيسيه التى اشترت الخدمه/المنتج فعلياً من قبل؟`
+  String get briefDescription {
+    return Intl.message(
+      'وصف مختصر للشريحه العملاء الرئيسيه التى اشترت الخدمه/المنتج فعلياً من قبل؟',
+      name: 'briefDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى نقاط القوه الخاصه بالمصنع؟`
+  String get strengthsFactory {
+    return Intl.message(
+      'ماهى نقاط القوه الخاصه بالمصنع؟',
+      name: 'strengthsFactory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ماهى نقاط الضعف الخاصه بالمصنع؟`
+  String get weaknessesFactory {
+    return Intl.message(
+      'ماهى نقاط الضعف الخاصه بالمصنع؟',
+      name: 'weaknessesFactory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `سحب و افلات`
+  String get dragOrDrop {
+    return Intl.message(
+      'سحب و افلات',
+      name: 'dragOrDrop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أو`
+  String get or {
+    return Intl.message(
+      'أو',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تصفح ملفات`
+  String get browse {
+    return Intl.message(
+      'تصفح ملفات',
+      name: 'browse',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الملف التعريفي أو البروشور الخاص بالشركة إن وجد`
+  String get profile {
+    return Intl.message(
+      'الملف التعريفي أو البروشور الخاص بالشركة إن وجد',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كافة الصور الخاصة بالمنتجات`
+  String get productsPhotos {
+    return Intl.message(
+      'كافة الصور الخاصة بالمنتجات',
+      name: 'productsPhotos',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الشركاء – العملاء`
+  String get clients {
+    return Intl.message(
+      'الشركاء – العملاء',
+      name: 'clients',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `هل تعاملت مع مؤسسات/ أفراد للتسويق من قبل؟`
+  String get foundation {
+    return Intl.message(
+      'هل تعاملت مع مؤسسات/ أفراد للتسويق من قبل؟',
+      name: 'foundation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نعم`
+  String get yes {
+    return Intl.message(
+      'نعم',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لا`
+  String get no {
+    return Intl.message(
+      'لا',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تحميل`
+  String get loading {
+    return Intl.message(
+      'تحميل',
+      name: 'loading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لاتوجد بيانات`
+  String get noDataFound {
+    return Intl.message(
+      'لاتوجد بيانات',
+      name: 'noDataFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `النجاح`
+  String get success {
+    return Intl.message(
+      'النجاح',
+      name: 'success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل`
+  String get register {
+    return Intl.message(
+      'تسجيل',
+      name: 'register',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `مطلوب`
+  String get required {
+    return Intl.message(
+      'مطلوب',
+      name: 'required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `موافق`
+  String get ok {
+    return Intl.message(
+      'موافق',
+      name: 'ok',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `خطأ`
+  String get error {
+    return Intl.message(
+      'خطأ',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تم التسجيل بنجاح`
+  String get registerDone {
+    return Intl.message(
+      'تم التسجيل بنجاح',
+      name: 'registerDone',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

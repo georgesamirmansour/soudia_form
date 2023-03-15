@@ -64,7 +64,7 @@ class _TopWidgetState extends State<TopWidget> {
       );
 
   Widget _getDefaultWebWidget() => SizedBox(
-    height: 1300.h,
+    height: 2200.h,
     child: Stack(
       children: [
         Positioned(top: 0, right: 0, left: 0,child: _getLinearContainer(null),),

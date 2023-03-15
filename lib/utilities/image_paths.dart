@@ -7,5 +7,6 @@ const String fromBackIcon = "${_imagePath}formBackIcon.png";
 
 /// svg images
 const String addressIcon = "${_svgPath}addressIcon.svg";
+const String uploadIcon = "${_svgPath}upload.svg";
 const String emailIcon = "${_svgPath}emailIcon.svg";
 const String callUsIcon = "${_svgPath}callUsIcon.svg";

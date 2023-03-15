@@ -41,7 +41,7 @@ class CustomTextFormFiled extends StatelessWidget {
   final String? initialValue;
   final TextCapitalization? textCapitalization;
   final bool enableSuggestions;
-
+  
   CustomTextFormFiled(
       {required this.labelText,
       this.enableInteractiveSelection = true,

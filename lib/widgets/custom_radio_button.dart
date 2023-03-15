@@ -26,22 +26,22 @@ class CustomRadioButtonWidget extends StatefulWidget {
 class _CustomRadioButtonWidgetState extends State<CustomRadioButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    // return Row(
-    //   children: [
-    //     Radio<RadioMapper>(
-    //       value: widget.mapper,
-    //       groupValue: widget.mapper,
-    //       onChanged: widget.onChanged,
-    //       activeColor: accentColor,
-    //     ),
-    //     SizedBox(
-    //       width: 5.0.w,
-    //     ),
-    //     CustomText(
-    //         text: widget.labelText,
-    //         customTextStyle: MediumStyle(fontSize: 12.sp, color: answerColor)),
-    //   ],
-    // );
+    return Row(
+      children: [
+        Radio<RadioMapper>(
+          value: widget.mapper,
+          groupValue: widget.mapper,
+          onChanged: widget.onChanged,
+          activeColor: accentColor,
+        ),
+        SizedBox(
+          width: 5.0.w,
+        ),
+        CustomText(
+            text: widget.labelText,
+            customTextStyle: MediumStyle(fontSize: 12.sp, color: answerColor)),
+      ],
+    );
     return Container(color: Colors.black,);
   }
 }

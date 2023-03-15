@@ -1,4 +1,5 @@
 import 'package:first_form/ui/firstForm/first_form.dart';
+import 'package:first_form/ui/secondForm/second_form.dart';
 import 'package:first_form/widgets/logo_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,5 +29,5 @@ class HomeWidget extends StatelessWidget {
 
   Widget _getLogoWidget()=> const LogoWidget();
 
-  Widget _getTopWidget()=> const TopWidget(FirstFormWidget());
+  Widget _getTopWidget()=>   TopWidget(SecondFormWidget());
 }

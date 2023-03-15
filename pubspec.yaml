@@ -35,22 +35,33 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  google_fonts: ^4.0.3
-  image_loader: ^1.6.0
-  rxdart: ^0.27.7
-  flutter_screenutil: ^5.6.1
+  cupertino_icons:
+  google_fonts:
+  image_loader:
+  rxdart:
+  dotted_border:
+  flutter_screenutil: ^5.7.0
+  custom_progress_button:
+  file_picker:
+  flutter_animated_dialog:
+  flutter_spinkit:
+  image_picker_for_web:
+  progress_dialog_null_safe:
+  form_field_validator:
+  flutter_dropzone: ^3.0.5
+  dio:
+  retrofit:
+  json_annotation:
+
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  #  flutter_test:
+  #    sdk: flutter
+  build_runner:
+  retrofit_generator:
+  flutter_launcher_icons:
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

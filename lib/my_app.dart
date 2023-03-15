@@ -1,4 +1,5 @@
 import 'package:first_form/ui/home/home_widget.dart';
+import 'package:first_form/ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -33,7 +34,7 @@ class MyAppWidget extends StatelessWidget {
           home: child,
         );
       },
-      child: const HomeWidget(),
+      child:  SplashScreen(),
     );
   }
 }
