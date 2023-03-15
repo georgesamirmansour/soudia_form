@@ -146,9 +146,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getNameTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).name,
-          onChanged: (value) {
-            _bloc.updateName(value);
-          },
+          onChanged: (value) => _bloc.updateName(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.nameStream,
@@ -157,9 +155,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getMobileTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).mobile,
-          onChanged: (value) {
-            _bloc.updateMobile(value);
-          },
+          onChanged: (value) => _bloc.updateMobile(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.mobileStream,
@@ -168,9 +164,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectTypeTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectType,
-          onChanged: (value) {
-            _bloc.updateProjectType(value);
-          },
+          onChanged: (value) => _bloc.updateProjectType(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectTypeStream,
@@ -187,9 +181,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectValuableTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectValuable,
-          onChanged: (value) {
-            _bloc.updateProjectValuable(value);
-          },
+          onChanged: (value) => _bloc.updateProjectValuable(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectValuableStream,
@@ -198,9 +190,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectIdeaTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectIdea,
-          onChanged: (value) {
-            _bloc.updateProjectIdea(value);
-          },
+          onChanged: (value) => _bloc.updateProjectIdea(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectIdeaStream,
@@ -209,9 +199,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectImpressionTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectImpression,
-          onChanged: (value) {
-            _bloc.updateProjectImpression(value);
-          },
+          onChanged: (value) => _bloc.updateProjectImpression(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectImpressionStream,
@@ -220,9 +208,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectTargetTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectTarget,
-          onChanged: (value) {
-            _bloc.updateProjectTarget(value);
-          },
+          onChanged: (value) => _bloc.updateProjectTarget(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectTargetStream,
@@ -239,9 +225,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectPriceTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectPrice,
-          onChanged: (value) {
-            _bloc.updateProjectPrice(value);
-          },
+          onChanged: (value) => _bloc.updateProjectPrice(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectPriceStream,
@@ -250,9 +234,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
   StreamBuilder<String> _getProjectNotesTextFormFiled() => StreamBuilder(
         builder: (context, snapshot) => CustomTextFormFiled(
           labelText: S.of(context).projectNotes,
-          onChanged: (value) {
-            _bloc.updateNotes(value);
-          },
+          onChanged: (value) => _bloc.updateNotes(value),
           validator: (value) => Validator().emptyValidator(context).call(value),
         ),
         stream: _bloc.projectNotesStream,
@@ -264,7 +246,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
           onTap: () {
             _bloc.sendSMTP();
           },
-          failedBehaviour: _bloc.failedBehaviour,
+          enableClick: true,
           buttonBehaviour: _bloc.buttonBehaviour,
           validateStream: _bloc.validate,
         ),
