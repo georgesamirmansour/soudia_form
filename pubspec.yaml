@@ -1,4 +1,4 @@
-name: first_form
+name: BROADCAST
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -50,12 +50,15 @@ dependencies:
   logger: any  #for logging purpose
   dio: ^5.0.2
   json_annotation: ^4.8.0
+#  flutter_launcher_icons_maker: ^0.10.2
+  flutter_native_splash: ^2.2.19
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   retrofit_generator: '>=5.0.0 <6.0.0'
   build_runner: '>=2.3.0 <4.0.0'
+#  flutter_launcher_icons_maker: ^0.10.2
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -112,3 +115,27 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_intl:
   enabled: true
+
+flutter_native_splash:
+  android: false
+  ios: false
+  web: true
+  color_web: "#ffffff"
+  color_dark_web: "#ffffff"
+  image_web: lib/assets/splash.png
+  image_dark_web: lib/assets/splash.png
+  web_image_mode: center
+  fullscreen: true
+
+flutter_icons:
+  android: false
+  ios: false
+  macos: false
+  windows: false
+  web: true
+  image_path: "lib/assets/images/logo.png"
+
+flutter_app_name:
+  name: "BROADCAST"
+
+

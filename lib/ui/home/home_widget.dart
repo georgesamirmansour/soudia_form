@@ -1,12 +1,19 @@
-import 'package:first_form/ui/firstForm/first_form.dart';
-import 'package:first_form/widgets/logo_widget.dart';
+import 'package:BROADCAST/widgets/logo_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../firstForm/first_form.dart';
 import '../topView/TopView.dart';
 
-class HomeWidget extends StatelessWidget {
+class HomeWidget extends StatefulWidget {
   const HomeWidget({Key? key}) : super(key: key);
+
+  @override
+  State<HomeWidget> createState() => _HomeWidgetState();
+}
+
+class _HomeWidgetState extends State<HomeWidget> {
+  final ScrollController _scrollBehavior = ScrollController();
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -19,6 +26,7 @@ class HomeWidget extends StatelessWidget {
                     maxWidth: boxConstraints.maxWidth,
                     minWidth: boxConstraints.minWidth),
                 child: SingleChildScrollView(
+                  controller: _scrollBehavior,
                   child: Column(
                     children: [
                       _getLogoWidget(),
@@ -35,5 +43,7 @@ class HomeWidget extends StatelessWidget {
 
   Widget _getLogoWidget() => const LogoWidget();
 
-  Widget _getTopWidget() => const TopWidget(FirstFormWidget());
+  Widget _getTopWidget() => TopWidget(FirstFormWidget(
+        scrollController: _scrollBehavior,
+      ));
 }

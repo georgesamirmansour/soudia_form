@@ -1,6 +1,6 @@
-import 'package:first_form/RadioMapper.dart';
-import 'package:first_form/bases/base_state.dart';
-import 'package:first_form/bases/bloc_base.dart';
+import 'package:BROADCAST/RadioMapper.dart';
+import 'package:BROADCAST/bases/base_state.dart';
+import 'package:BROADCAST/bases/bloc_base.dart';
 import 'package:rxdart/rxdart.dart';
 
 import '../../../generated/l10n.dart';

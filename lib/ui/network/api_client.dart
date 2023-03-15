@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:first_form/ui/network/send_email_request.dart';
+import 'package:BROADCAST/ui/network/send_email_request.dart';
 import 'package:retrofit/http.dart';
 
 part 'api_client.g.dart';

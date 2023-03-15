@@ -1,25 +1,26 @@
-import 'package:custom_progress_button/custom_progress.dart';
-import 'package:first_form/RadioMapper.dart';
-import 'package:first_form/bases/bloc_base.dart';
-import 'package:first_form/bases/bloc_base.dart';
-import 'package:first_form/ui/firstForm/first_form_bloc.dart';
-import 'package:first_form/ui/firstForm/preferredLanguage/project_language_widget.dart';
-import 'package:first_form/ui/firstForm/projectIdentity/project_identity_widget.dart';
-import 'package:first_form/ui/firstForm/projectIndustry/project_industry_widget.dart';
-import 'package:first_form/ui/projectPattern/project_pattern_widget.dart';
-import 'package:first_form/utilities/CustomText.dart';
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
-import 'package:first_form/widgets/custom_progress_button.dart';
-import 'package:first_form/widgets/custom_text_form_filed.dart';
+
+import 'package:BROADCAST/bases/bloc_base.dart';
+import 'package:BROADCAST/ui/firstForm/preferredLanguage/project_language_widget.dart';
+import 'package:BROADCAST/ui/firstForm/projectIdentity/project_identity_widget.dart';
+import 'package:BROADCAST/ui/firstForm/projectIndustry/project_industry_widget.dart';
+import 'package:BROADCAST/ui/firstForm/projectPattern/project_pattern_widget.dart';
+import 'package:BROADCAST/utilities/CustomText.dart';
+import 'package:BROADCAST/utilities/CustomTextStyle.dart';
+import 'package:BROADCAST/utilities/app_colors.dart';
+import 'package:BROADCAST/widgets/custom_progress_button.dart';
+import 'package:BROADCAST/widgets/custom_text_form_filed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../bases/Validator.dart';
 import '../../generated/l10n.dart';
+import 'first_form_bloc.dart';
 
 class FirstFormWidget extends StatefulWidget {
-  const FirstFormWidget({Key? key}) : super(key: key);
+  final ScrollController scrollController;
+
+  const FirstFormWidget({Key? key, required this.scrollController})
+      : super(key: key);
 
   @override
   State<FirstFormWidget> createState() => _FirstFormWidgetState();
@@ -38,7 +39,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
 
   Widget _getChildWidget() => _getFormContainer(
         child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
+          margin: EdgeInsets.symmetric(horizontal: _isMobile() ? 15.w : 30.w, vertical: 40.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,9 +57,11 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
                 height: 20.h,
               ),
               _getLanguageText(),
-              ProjectLanguageWidget(onSelectItem: (radioMapper) {
-                _bloc.updatePreferredLanguage(radioMapper);
-              }),
+              ProjectLanguageWidget(
+                  scrollController: widget.scrollController,
+                  onSelectItem: (radioMapper) {
+                    _bloc.updatePreferredLanguage(radioMapper);
+                  }),
               SizedBox(
                 height: 10.h,
               ),
@@ -67,6 +70,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
                 height: 10.h,
               ),
               ProjectIndustryWidget(
+                scrollController: widget.scrollController,
                 selectedItem: (radioMapper) =>
                     _bloc.updateProjectFiled(radioMapper),
               ),
@@ -94,6 +98,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
                 height: 10.h,
               ),
               ProjectPatternWidget(
+                scrollController: widget.scrollController,
                 onSelectItem: (radioMapper) =>
                     _bloc.updateProjectPattern(radioMapper),
               ),
@@ -105,6 +110,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
                 height: 10.h,
               ),
               ProjectIdentityWidget(
+                scrollController: widget.scrollController,
                 selectedList: (list) => _bloc.updateProjectIdentityList(list),
               ),
               SizedBox(

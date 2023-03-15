@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:custom_progress_button/custom_progress.dart';
 import 'package:dio/dio.dart';
 import 'package:enough_mail/enough_mail.dart';
-import 'package:first_form/RadioMapper.dart';
-import 'package:first_form/bases/bloc_base.dart';
-import 'package:first_form/ui/network/api_client.dart';
-import 'package:first_form/ui/network/send_email_request.dart';
+import 'package:BROADCAST/RadioMapper.dart';
+import 'package:BROADCAST/bases/bloc_base.dart';
+import 'package:BROADCAST/ui/network/api_client.dart';
+import 'package:BROADCAST/ui/network/send_email_request.dart';
 import 'package:flutter_mail_server/flutter_mail_server.dart';
 import 'package:rxdart/rxdart.dart';
 

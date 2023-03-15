@@ -1,7 +1,8 @@
-import 'package:first_form/my_app.dart';
+import 'package:BROADCAST/my_app.dart';
 import 'package:flutter/material.dart';
 
 void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyAppWidget());
 }
 

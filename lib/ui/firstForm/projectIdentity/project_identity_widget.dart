@@ -1,8 +1,8 @@
-import 'package:first_form/RadioMapper.dart';
-import 'package:first_form/ui/firstForm/preferredLanguage/preferred_language_bloc.dart';
-import 'package:first_form/ui/firstForm/projectIdentity/project_identity_bloc.dart';
-import 'package:first_form/widgets/custom_check_box.dart';
-import 'package:first_form/widgets/custom_radio_button.dart';
+import 'package:BROADCAST/RadioMapper.dart';
+import 'package:BROADCAST/ui/firstForm/preferredLanguage/preferred_language_bloc.dart';
+import 'package:BROADCAST/ui/firstForm/projectIdentity/project_identity_bloc.dart';
+import 'package:BROADCAST/widgets/custom_check_box.dart';
+import 'package:BROADCAST/widgets/custom_radio_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -10,8 +10,8 @@ import '../../../bases/bloc_base.dart';
 
 class ProjectIdentityWidget extends StatefulWidget {
   final Function(List<RadioMapper> radioMapper) selectedList;
-
-  const ProjectIdentityWidget({Key? key, required this.selectedList})
+  final ScrollController scrollController;
+  const ProjectIdentityWidget({Key? key, required this.selectedList, required this.scrollController})
       : super(key: key);
 
   @override
@@ -50,12 +50,14 @@ class _ProjectLanguageWidgetState extends State<ProjectIdentityWidget> {
 
   GridView _buildView(AsyncSnapshot<List<RadioMapper>> snapshot) {
     return GridView.builder(
+      // controller: widget.scrollController,
+      physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: _isMobile() ? 2 : 3,
-        crossAxisSpacing: 10.r,
-        mainAxisSpacing: 10.h,
+        crossAxisSpacing: 0,
+        mainAxisSpacing: 0,
         childAspectRatio: _isMobile()
-            ? MediaQuery.of(context).size.aspectRatio * 8
+            ? 3
             : MediaQuery.of(context).size.aspectRatio * 2.7,
       ),
       itemBuilder: (context, index) => CustomCheckBoxWidget(

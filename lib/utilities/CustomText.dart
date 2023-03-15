@@ -1,4 +1,4 @@
-import 'package:first_form/utilities/CustomTextStyle.dart';
+import 'package:BROADCAST/utilities/CustomTextStyle.dart';
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
@@ -20,6 +20,8 @@ class CustomText extends StatelessWidget {
 
   Text get customText => Text(
     text,
+    overflow: TextOverflow.clip,
+    selectionColor: Colors.transparent,
     textAlign: textAlign,
     style: customTextStyle.getStyle(),
     softWrap: softWrap,

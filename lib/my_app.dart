@@ -1,4 +1,4 @@
-import 'package:first_form/ui/home/home_widget.dart';
+import 'package:BROADCAST/ui/home/home_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -22,13 +22,13 @@ class MyAppWidget extends StatelessWidget {
             S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
           ],
-          locale: const Locale('ar', ''),
+          locale: const Locale('ar'),
           supportedLocales: S.delegate.supportedLocales,
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
           home: child,
         );

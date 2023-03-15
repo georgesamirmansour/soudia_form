@@ -1,6 +1,6 @@
 {
-    "name": "first_form",
-    "short_name": "first_form",
+    "name": "BROADCAST",
+    "short_name": "BROADCAST",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
