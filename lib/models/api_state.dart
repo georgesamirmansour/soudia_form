@@ -1,6 +1,3 @@
-
-
-
 import '../utilities/logger.dart';
 
 abstract class ApiState<T> {
