@@ -44,7 +44,7 @@ class _CustomCheckBoxWidgetState extends State<CustomCheckBoxWidget> {
           child: CustomText(
               text: widget.labelText,
               softWrap: true,
-              customTextStyle: MediumStyle(fontSize: 12.sp, color: answerColor)),
+              customTextStyle: MediumStyle(fontSize: 14.sp, color: answerColor)),
         ),
       ],
     );

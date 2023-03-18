@@ -41,7 +41,7 @@ class _ProjectLanguageWidgetState extends State<ProjectLanguageWidget> {
   StreamBuilder<List<RadioMapper>> get _screenDesign => StreamBuilder(
         builder: (context, snapshot) => GridView.builder(
           // controller: widget.scrollController,
-          physics: const NeverScrollableScrollPhysics(),
+          primary: false,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: _isMobile() ? 2 : 3,
             crossAxisSpacing: 0,

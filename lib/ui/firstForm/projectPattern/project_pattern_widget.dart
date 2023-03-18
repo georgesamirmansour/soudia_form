@@ -51,7 +51,7 @@ class _ProjectLanguageWidgetState extends State<ProjectPatternWidget> {
   GridView _buildView(AsyncSnapshot<List<RadioMapper>> snapshot) {
     return GridView.builder(
       // controller: widget.scrollController,
-      physics: const NeverScrollableScrollPhysics(),
+      primary: false,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: _isMobile() ? 2 : 3,
         crossAxisSpacing: 0,

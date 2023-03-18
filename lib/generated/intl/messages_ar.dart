@@ -75,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "projectLogo": MessageLookupByLibrary.simpleMessage(
             "ما هو نمط الشعار الذي تفضله؟"),
         "projectNotes": MessageLookupByLibrary.simpleMessage(
-            "في حالة وجود معلومات أخرى عن مشروعك، يرجى ذكرها هنا."),
+            "في حالة وجود معلومات أخرى عن مشروعك ، يرجى ذكرها هنا."),
         "projectPrice": MessageLookupByLibrary.simpleMessage(
             "ما هي الميزانية المخصصة لصناعة هوية مشروعك؟"),
         "projectSubject": MessageLookupByLibrary.simpleMessage(

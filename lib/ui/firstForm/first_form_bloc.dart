@@ -7,6 +7,7 @@ import 'package:BROADCAST/RadioMapper.dart';
 import 'package:BROADCAST/bases/bloc_base.dart';
 import 'package:BROADCAST/ui/network/api_client.dart';
 import 'package:BROADCAST/ui/network/send_email_request.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_mail_server/flutter_mail_server.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -25,7 +26,8 @@ class FirstFormBloc extends BlocBase {
   final _projectPriceBehaviour = BehaviorSubject<String>();
   final _projectNotesBehaviour = BehaviorSubject<String>();
   final buttonBehaviour = BehaviorSubject<ButtonState>();
-  String _basicAuth = 'Basic ${base64.encode(utf8.encode('Sadek:123'))}';
+  final failedBehaviour = BehaviorSubject<String>();
+  final String _basicAuth = 'Basic ${base64.encode(utf8.encode('Sadek:123'))}';
   final Dio _dio = Dio(BaseOptions(
     connectTimeout: const Duration(minutes: 3),
     receiveTimeout: const Duration(minutes: 3),
@@ -129,12 +131,18 @@ class FirstFormBloc extends BlocBase {
     // print(_getMailMessage());
     // buttonBehaviour.sink.add(ButtonState.success);
     try{
-      buttonBehaviour.sink.add(ButtonState.loading);
-      addHeaderToDio();
-      await ApiClient(_dio).sendEmailFirstForm(SendEmailRequest(_getMailMessage()));
-      buttonBehaviour.sink.add(ButtonState.success);
+      validate.listen((event) async{
+        if(event){
+          buttonBehaviour.sink.add(ButtonState.loading);
+          addHeaderToDio();
+          await ApiClient(_dio).sendEmailFirstForm(SendEmailRequest(_getMailMessage()));
+          buttonBehaviour.sink.add(ButtonState.success);
+        }
+      });
     }catch(e){
-      print(e);
+      if (kDebugMode) {
+        print(e);
+      }
       buttonBehaviour.sink.add(ButtonState.fail);
     }
   }

@@ -9,13 +9,11 @@ class MyAppWidget extends StatelessWidget {
   const MyAppWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
+  Widget build(BuildContext context) => ScreenUtilInit(
       designSize: const Size(720, 960),
       minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context, child) {
-        return MaterialApp(
+      splitScreenMode: false,
+      builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'BROADCAST',
           localizationsDelegates: const [
@@ -31,9 +29,7 @@ class MyAppWidget extends StatelessWidget {
             primarySwatch: Colors.blue,
           ),
           home: child,
-        );
-      },
+        ),
       child: const HomeWidget(),
     );
-  }
 }

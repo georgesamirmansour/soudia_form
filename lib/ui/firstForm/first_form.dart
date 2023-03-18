@@ -255,6 +255,7 @@ class _FirstFormWidgetState extends State<FirstFormWidget> {
           enableClick: true,
           buttonBehaviour: _bloc.buttonBehaviour,
           validateStream: _bloc.validate,
+          failedBehaviour: _bloc.failedBehaviour,
         ),
       );
 }
