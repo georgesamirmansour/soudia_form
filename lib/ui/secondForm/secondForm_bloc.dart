@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:custom_progress_button/custom_progress.dart';
 import 'package:dio/dio.dart';
-import 'package:first_form/Network/api_client.dart';
-import 'package:first_form/bases/button_bloc.dart';
-import 'package:first_form/bases/validator.dart';
-import 'package:first_form/generated/l10n.dart';
-import 'package:first_form/models/api_state.dart';
-import 'package:first_form/models/sendEmail_response.dart';
-import 'package:first_form/repository/sendSMTP_repository.dart';
+
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../../bases/button_bloc.dart';
+import '../../bases/validator.dart';
+import '../../generated/l10n.dart';
+import '../../models/api_state.dart';
+import '../../repository/sendSMTP_repository.dart';
 
 class SecondFormBloc extends ButtonBloc {
   final _radioBoxBehaviour = BehaviorSubject<String>();

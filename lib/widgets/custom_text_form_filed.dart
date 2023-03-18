@@ -1,5 +1,5 @@
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
+import 'package:BROADCAST/utilities/CustomTextStyle.dart';
+import 'package:BROADCAST/utilities/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -41,148 +41,148 @@ class CustomTextFormFiled extends StatelessWidget {
   final String? initialValue;
   final TextCapitalization? textCapitalization;
   final bool enableSuggestions;
-  
+
   CustomTextFormFiled(
       {required this.labelText,
-      this.enableInteractiveSelection = true,
-      this.onTap,
-      this.textEditingController,
-      this.onChanged,
-      this.errorText,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.textInputAction = TextInputAction.next,
-      this.textInputType = TextInputType.text,
-      this.enable = true,
-      this.expanded = false,
-      this.isPassword = false,
-      this.isLabel = false,
-      this.isDense = false,
-      this.passwordVisibility = false,
-      this.readOnly = false,
-      this.updatePasswordToggle,
-      this.customContentPadding,
-      this.onFieldSubmitted,
-      this.validator,
-      this.usedInAppBar = false,
-      this.minLines,
-      this.hasContentPadding = true,
-      this.focusNode,
-      this.autoFocus = false,
-      this.inputFormatter,
-      this.borderColor,
-      this.showCounter = true,
-      this.maxLength,
-      this.enableBorder = true,
-      this.maxLines,
-      this.initialValue,
-      this.textCapitalization,
-      this.enableSuggestions = false,
-      this.key});
+        this.enableInteractiveSelection = true,
+        this.onTap,
+        this.textEditingController,
+        this.onChanged,
+        this.errorText,
+        this.prefixIcon,
+        this.suffixIcon,
+        this.textInputAction = TextInputAction.next,
+        this.textInputType = TextInputType.text,
+        this.enable = true,
+        this.expanded = false,
+        this.isPassword = false,
+        this.isLabel = false,
+        this.isDense = false,
+        this.passwordVisibility = false,
+        this.readOnly = false,
+        this.updatePasswordToggle,
+        this.customContentPadding,
+        this.onFieldSubmitted,
+        this.validator,
+        this.usedInAppBar = false,
+        this.minLines,
+        this.hasContentPadding = true,
+        this.focusNode,
+        this.autoFocus = false,
+        this.inputFormatter,
+        this.borderColor,
+        this.showCounter = true,
+        this.maxLength,
+        this.enableBorder = true,
+        this.maxLines,
+        this.initialValue,
+        this.textCapitalization,
+        this.enableSuggestions = false,
+        this.key});
 
   @override
   Widget build(BuildContext context) => _textFormFiled;
 
   Widget get _textFormFiled => TextFormField(
-        onTap: onTap,
-        style: _defaultTextStyle,
-        initialValue: initialValue,
-        textInputAction: textInputAction,
-        cursorColor: accentColor,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        textCapitalization: textCapitalization == null
-            ? TextCapitalization.sentences
-            : textCapitalization!,
-        showCursor: !readOnly,
-        controller: textEditingController,
-        keyboardType: textInputType,
-        enabled: enable,
-        // focusNode: focusNode == null ? FocusNode() : focusNode,
-        enableInteractiveSelection: enableInteractiveSelection,
-        expands: expanded,
-        autofocus: autoFocus,
-        maxLength: maxLength,
-        inputFormatters: inputFormatter,
-        maxLines: isPassword
-            ? 1
-            : passwordVisibility
-                ? 1
-                : maxLines,
-        validator: (value) => validator == null ? null : validator!(value),
-        obscureText: passwordVisibility,
-        readOnly: readOnly,
-        onChanged: (value) => onChanged != null ? onChanged!(value) : null,
-        minLines: isPassword
-            ? 1
-            : minLines,
-        enableSuggestions: enableSuggestions,
-        decoration: _inputDecoration,
-        toolbarOptions: enable
-            ? const ToolbarOptions(
-                copy: true, cut: true, paste: true, selectAll: true)
-            : const ToolbarOptions(
-                selectAll: false, paste: false, cut: false, copy: false),
-        selectionControls: CupertinoTextSelectionControls(),
-        // onFieldSubmitted: (value) => onFieldSubmitted!(value),
-      );
+    onTap: onTap,
+    style: _defaultTextStyle,
+    initialValue: initialValue,
+    textInputAction: textInputAction,
+    cursorColor: accentColor,
+    autovalidateMode: AutovalidateMode.onUserInteraction,
+    textCapitalization: textCapitalization == null
+        ? TextCapitalization.sentences
+        : textCapitalization!,
+    showCursor: !readOnly,
+    controller: textEditingController,
+    keyboardType: textInputType,
+    enabled: enable,
+    // focusNode: focusNode == null ? FocusNode() : focusNode,
+    enableInteractiveSelection: enableInteractiveSelection,
+    expands: expanded,
+    autofocus: autoFocus,
+    maxLength: maxLength,
+    inputFormatters: inputFormatter,
+    maxLines: isPassword
+        ? 1
+        : passwordVisibility
+        ? 1
+        : maxLines,
+    validator: (value) => validator == null ? null : validator!(value),
+    obscureText: passwordVisibility,
+    readOnly: readOnly,
+    onChanged: (value) => onChanged != null ? onChanged!(value) : null,
+    minLines: isPassword
+        ? 1
+        : minLines,
+    enableSuggestions: enableSuggestions,
+    decoration: _inputDecoration,
+    toolbarOptions: enable
+        ? const ToolbarOptions(
+        copy: true, cut: true, paste: true, selectAll: true)
+        : const ToolbarOptions(
+        selectAll: false, paste: false, cut: false, copy: false),
+    selectionControls: CupertinoTextSelectionControls(),
+    // onFieldSubmitted: (value) => onFieldSubmitted!(value),
+  );
 
   InputDecoration get _inputDecoration => InputDecoration(
-        errorStyle: _errorTextStyle,
-        errorMaxLines: 4,
-        contentPadding: hasContentPadding
-            ? customContentPadding ??
-                EdgeInsets.only(
-                    left: 14.w, right: 14.w, top: 14.h, bottom: 14.h)
-            : null,
-        errorText: errorText,
-        enabled: enable,
-        counterStyle: _counterTextStyle,
-        hintStyle: _hintTextStyle,
-        helperStyle: _counterTextStyle,
-        labelStyle: _defaultTextStyle,
-        isDense: isDense,
-        fillColor: Colors.white,
-        filled: true,
-        // fillColor: usedInAppBar ? Colors.white : Colors.transparent,
-        // filled: usedInAppBar,
-        suffixIcon: isPassword ? _passwordIcon : suffixIcon,
-        prefixIcon: prefixIcon,
-        labelText: !isLabel ? labelText : null,
-        hintText: isLabel ? labelText : null,
-        border: _getBorder(greyColor),
-        disabledBorder: _getBorder(greyColor),
-        enabledBorder: _getBorder(greyColor),
-        errorBorder: _getBorder(Colors.red),
-        focusedBorder: _getBorder(greyColor),
-        focusedErrorBorder: _getBorder(Colors.red),
-      );
+    errorStyle: _errorTextStyle,
+    errorMaxLines: 4,
+    contentPadding: hasContentPadding
+        ? customContentPadding ??
+        EdgeInsets.only(
+            left: 14.w, right: 14.w, top: 14.h, bottom: 14.h)
+        : null,
+    errorText: errorText,
+    enabled: enable,
+    counterStyle: _counterTextStyle,
+    hintStyle: _hintTextStyle,
+    helperStyle: _counterTextStyle,
+    labelStyle: _defaultTextStyle,
+    isDense: isDense,
+    fillColor: Colors.white,
+    filled: true,
+    // fillColor: usedInAppBar ? Colors.white : Colors.transparent,
+    // filled: usedInAppBar,
+    suffixIcon: isPassword ? _passwordIcon : suffixIcon,
+    prefixIcon: prefixIcon,
+    labelText: !isLabel ? labelText : null,
+    hintText: isLabel ? labelText : null,
+    border: _getBorder(greyColor),
+    disabledBorder: _getBorder(greyColor),
+    enabledBorder: _getBorder(greyColor),
+    errorBorder: _getBorder(Colors.red),
+    focusedBorder: _getBorder(greyColor),
+    focusedErrorBorder: _getBorder(Colors.red),
+  );
 
   Widget get _passwordIcon => IconButton(
-        icon: passwordVisibility ? Container() : Container(),
-        onPressed: () {
-          updatePasswordToggle!(!passwordVisibility);
-        },
-      );
+    icon: passwordVisibility ? Container() : Container(),
+    onPressed: () {
+      updatePasswordToggle!(!passwordVisibility);
+    },
+  );
 
   Widget loadVisibilityIcon(String path) => ImageHelper(
-        image: path,
-        imageType: ImageType.svg,
-        boxFit: BoxFit.fill,
-      );
+    image: path,
+    imageType: ImageType.svg,
+    boxFit: BoxFit.fill,
+  );
 
   TextStyle get _counterTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 18.sp)
+      MediumStyle(color: usedInAppBar ? blackColor : blackColor, fontSize: 14.sp)
           .getStyle();
 
   TextStyle get _errorTextStyle =>
       MediumStyle(color: Colors.red, fontSize: 16).getStyle();
 
   TextStyle get _hintTextStyle =>
-      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 18.sp)
+      MediumStyle(color: usedInAppBar ? blackColor : questColor, fontSize: 14.sp)
           .getStyle();
 
   TextStyle get _defaultTextStyle =>
-      MediumStyle(color: blackColor, fontSize: 14.sp).getStyle();
+      BoldStyle(color: blackColor, fontSize: 14.sp).getStyle();
 
   InputBorder? _getBorder(Color color) => usedInAppBar
       ? UnderlineInputBorder(borderSide: BorderSide(color: color, width: 1.0.w))

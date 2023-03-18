@@ -1,12 +1,11 @@
 
-import 'package:first_form/ui/home/home_widget.dart';
-import 'package:first_form/ui/splash_screen.dart';
-import 'package:first_form/utilities/CustomText.dart';
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
- import 'package:flutter/material.dart';
-import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../ui/splash_screen.dart';
+import 'CustomText.dart';
+import 'CustomTextStyle.dart';
+import 'app_colors.dart';
 
 
 class ViewHelper {

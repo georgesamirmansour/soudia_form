@@ -1,10 +1,9 @@
-import 'package:first_form/my_app.dart';
-import 'package:first_form/ui/topView/TopView.dart';
 import 'package:flutter/material.dart';
+
+import 'my_app.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
   runApp(const MyAppWidget());
 }
 

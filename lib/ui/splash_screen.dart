@@ -1,9 +1,10 @@
-import 'package:first_form/ui/home/home_widget.dart';
-import 'package:first_form/utilities/image_paths.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
 import 'dart:async';
+
+import '../utilities/image_paths.dart';
+import 'home/home_widget.dart';
 
 class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();

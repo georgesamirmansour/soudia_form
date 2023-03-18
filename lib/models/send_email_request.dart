@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'sendEmail_response.g.dart';
+part 'send_email_request.g.dart';
 
 @JsonSerializable()
 class SendEmailRequest{

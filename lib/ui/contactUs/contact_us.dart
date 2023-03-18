@@ -1,7 +1,7 @@
-import 'package:first_form/utilities/CustomText.dart';
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
-import 'package:first_form/utilities/image_paths.dart';
+import 'package:BROADCAST/utilities/CustomText.dart';
+import 'package:BROADCAST/utilities/CustomTextStyle.dart';
+import 'package:BROADCAST/utilities/app_colors.dart';
+import 'package:BROADCAST/utilities/image_paths.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
@@ -20,6 +20,8 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
   Widget build(BuildContext context) {
     return _getUiColumn();
   }
+
+  bool _isMobile() => MediaQuery.of(context).size.width < 1200;
 
   Widget _getUiColumn() {
     return Column(
@@ -52,7 +54,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
 
   Widget _getContactUsText() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30.w),
+        margin: EdgeInsets.symmetric(horizontal: 30.w),
         child: CustomText(
             text: S.of(context).contactUs,
             customTextStyle: MediumStyle(fontSize: 34.sp, color: blackColor)));
@@ -70,7 +72,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
   Widget _getCard(Widget child) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30.w),
-      width: MediaQuery.of(context).size.width *0.32,
+      width: _isMobile() ? MediaQuery.of(context).size.width *0.75 : MediaQuery.of(context).size.width *0.35,
       decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: BorderRadius.all(Radius.circular(5.r)),
@@ -98,7 +100,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
               CustomText(
                   text: S.of(context).address,
                   customTextStyle:
-                      MediumStyle(fontSize: 20.sp, color: descColor)),
+                  MediumStyle(fontSize: 20.sp, color: descColor)),
               ImageHelper(
                 image: addressIcon,
                 imageType: ImageType.svg,
@@ -133,7 +135,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
               CustomText(
                   text: S.of(context).email,
                   customTextStyle:
-                      MediumStyle(fontSize: 20.sp, color: descColor)),
+                  MediumStyle(fontSize: 20.sp, color: descColor)),
               ImageHelper(
                 image: emailIcon,
                 imageType: ImageType.svg,
@@ -168,7 +170,7 @@ class _ContactUsWidgetState extends State<ContactUsWidget> {
               CustomText(
                   text: S.of(context).callUs,
                   customTextStyle:
-                      MediumStyle(fontSize: 20.sp, color: descColor)),
+                  MediumStyle(fontSize: 20.sp, color: descColor)),
               ImageHelper(
                 image: callUsIcon,
                 imageType: ImageType.svg,

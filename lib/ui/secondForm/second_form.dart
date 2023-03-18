@@ -1,21 +1,21 @@
 import 'dart:typed_data';
 
+import 'package:BROADCAST/ui/secondForm/secondForm_bloc.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:first_form/ui/secondForm/secondForm_bloc.dart';
-import 'package:first_form/utilities/CustomText.dart';
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
-import 'package:first_form/utilities/image_paths.dart';
-import 'package:first_form/utilities/view_helper.dart';
-import 'package:first_form/widgets/custom_button.dart';
-import 'package:first_form/widgets/custom_text_form_filed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_loader/image_helper.dart';
 
 import '../../generated/l10n.dart';
+import '../../utilities/CustomText.dart';
+import '../../utilities/CustomTextStyle.dart';
+import '../../utilities/app_colors.dart';
+import '../../utilities/image_paths.dart';
+import '../../utilities/view_helper.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_text_form_filed.dart';
 
 class SecondFormWidget extends StatefulWidget {
   const SecondFormWidget({Key? key}) : super(key: key);

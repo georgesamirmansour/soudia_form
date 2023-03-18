@@ -1,6 +1,7 @@
-import 'package:first_form/utilities/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'app_colors.dart';
 
 abstract class CustomTextStyle {
   final double fontSize;

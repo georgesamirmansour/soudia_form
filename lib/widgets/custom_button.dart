@@ -1,12 +1,13 @@
 
 import 'package:custom_progress_button/custom_progress.dart';
-import 'package:first_form/generated/l10n.dart';
-import 'package:first_form/utilities/CustomText.dart';
-import 'package:first_form/utilities/CustomTextStyle.dart';
-import 'package:first_form/utilities/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../generated/l10n.dart';
+import '../utilities/CustomText.dart';
+import '../utilities/CustomTextStyle.dart';
+import '../utilities/app_colors.dart';
 
 
 class CustomButton extends StatefulWidget {

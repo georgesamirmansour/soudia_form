@@ -1,6 +1,4 @@
-
 import 'package:dio/dio.dart';
-import 'package:first_form/models/sendEmail_response.dart';
 import 'package:retrofit/http.dart';
 
 part 'api_client.g.dart';
@@ -9,6 +7,7 @@ abstract class ApiClient{
 
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
+
   @POST("Emails/SendAttachments")
-  Future<void> sendEmailFirstForm(@Body() FormData formData);
+  Future<void> sendEmailSecondFormForm(@Body() FormData formData);
 }

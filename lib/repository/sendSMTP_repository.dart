@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:first_form/Network/api_client.dart';
-import 'package:first_form/generated/l10n.dart';
-import 'package:first_form/models/api_state.dart';
-import 'package:first_form/models/sendEmail_response.dart';
-import 'package:first_form/utilities/logger.dart';
+
+import '../generated/l10n.dart';
+import '../models/api_state.dart';
+import '../utilities/logger.dart';
+
 
 class sendSMTPRepository {
   Stream<ApiState> sendSMTP({required FormData formData}) async* {

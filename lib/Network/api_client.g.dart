@@ -14,7 +14,6 @@ class _ApiClient implements ApiClient {
     this.baseUrl,
   }) {
     baseUrl ??= 'http://broadcastmp-001-site14.atempurl.com/api/';
-
   }
 
   final Dio _dio;
@@ -22,11 +21,11 @@ class _ApiClient implements ApiClient {
   String? baseUrl;
 
   @override
-  Future<void> sendEmailFirstForm(request) async {
+  Future<void> sendEmailSecondFormForm(formData) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = request;
+    final _data = formData;
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
